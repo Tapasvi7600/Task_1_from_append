@@ -1,0 +1,128 @@
+<html>
+    <head>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+
+        </script>
+
+
+         <h1>Application</h1>
+
+        <script>
+
+
+            var jsonArray={};
+    $(function(){
+
+        //$(".remove-button").click(function(){});
+
+        $(".submit-button").click(function()
+    {
+
+           $('#table1').html('');
+        var x = $("form").serializeArray();
+        
+       // jsonArray=(JSON.stringify(x));
+
+       // var obj=JSON.parse(jsonArray);
+
+      //  document.write("x: "+x+"<br />");
+
+      //  document.write("jsonArray: "+jsonArray+"<br />");
+
+      //  document.write("obj after parse: "+obj);
+
+        //document.getElementById("print").innerHTML=obj.name;
+
+        $.each(x, function(i, field){
+
+            $("#table1").append("<tr><td>"+field.value+"</td></tr>");
+    });
+
+
+    });
+
+
+    });
+
+        function addFunction(){
+            
+       
+
+        $("#Textboxes").append("<div id='rem'> Name:<input type='text' class='text-box' name='Name' value='' />&nbsp<button type='button' onclick='addFunction()' class='add-button'>Add</button>&nbsp<button type='button' class='remove-button'>Remove</button></div>");
+
+
+        $(".remove-button").click(removeFunction);
+      }
+
+        function removeFunction(){
+
+
+         $(this).parent().remove();
+      }
+
+    </script>
+
+
+    <script>
+
+    //var jsonArray={};
+
+  /*  function onSubmission()
+    {
+        
+        var x = $("form").serializeArray();
+        
+        jsonArray=(JSON.stringify(x));
+
+        //var obj=JSON.parse(jsonArray);
+
+        //document.write(jsonArray);
+
+        //document.getElementById("print").innerHTML=obj.name;
+
+        $.each(x, function(i, field){
+            $("#results").append(field.value + " ");
+        });
+
+    
+    }
+
+    */
+
+
+
+
+
+    </script>
+
+
+
+    </head>
+
+
+    <body bgcolor="yellow">
+
+    <div id="Textboxes1">
+
+          
+        <form action="" id="Textboxes">
+
+         Name: <input type="text"  class="text-box" name="Name" value=""/>
+         <button type="button" class="add-button" onclick="addFunction()">Add</button>
+    </div>
+
+      <div>
+         </form>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" class="submit-button">Submit</button>
+    </div>
+
+    <table border="2" id="table1">
+
+    &nbsp&nbsp<th>Names</th>
+    </table>
+   
+
+
+    </body>
+    </html>
